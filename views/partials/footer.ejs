@@ -1,0 +1,113 @@
+</div>
+    </main>
+<!-- page-content" -->
+</div>
+<!-- using online scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+</script>
+<script src="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<script src="/javascripts/mainsidebar.js"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  $('#table').DataTable( {
+    paging: true,
+    select: true,
+    columnDefs: [
+      {
+        targets: [0,1,2,3,4,5],
+        className: 'dt-body-center'
+      },
+      {
+        targets: [0,1,2,3,4,5],
+        className: 'dt-head-center'
+      }
+    ]
+  } );
+  $('#table').DataTable().on( 'draw', function () {
+    $('.delete-user').off();
+    $('.delete-user').on('click', function (e) {
+      e.preventDefault();
+      let id = $(this).attr('id');
+      $.ajax({
+        url: '/api/v1/user/'+id,
+        method: 'delete',
+        success: function (response){
+          alert('Successfully delete user!');
+          window.location.assign('/dashboard');
+        },
+        error: function(res, status, error){
+          alert('Something went wrong please trz again later');
+        }
+      })
+    })
+  } );
+
+  $(document).ready(function(){
+    $('.delete-user').on('click', function (e) {
+      e.preventDefault();
+      let id = $(this).attr('id');
+      $.ajax({
+        url: '/api/v1/user/'+id,
+        method: 'delete',
+        success: function (response){
+          alert('Successfully delete user!');
+          window.location.assign('/dashboard');
+        },
+        error: function(res, status, error){
+          alert('Something went wrong please trz again later');
+        }
+      })
+    })
+  });
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Get the forms we want to add validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+          var timeout = setTimeout(function(){
+            form.classList.remove('was-validated');
+          }, 1500);
+          $.ajax({
+            url: location.pathname,
+            method: 'PUT',
+            data: {
+              firstname: $('#fname').val(),
+              lastname: $('#lname').val(),
+              email: $('#email').val(),
+              password: $('#pwd').val(),
+            },
+            success: function (response){
+              $('#alert-success').fadeIn('very slow ');
+              setTimeout(function () {
+                window.location.assign('/dashboard/users');
+              },2000);
+              $('#alert-success').fadeOut(1500);
+            },
+            error: function(res, status, error){
+              $('#alert-fail').fadeIn().fadeOut(2000);
+            }
+          })
+        }, false);
+      });
+    }, false);
+  })();
+
+</script>
+</body>
+
+</html>

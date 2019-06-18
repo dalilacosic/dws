@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/logodws.jpg">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <title>Embodiment</title>
+
+</head>
+
+<body">
+</div>
+<div id="page">
+    <canvas id="canvas"></canvas>
+    <header class="header">
+        <nav class="navigacijski-meni" id="screen1">
+            <ul class="nav-meni-ul row">
+                <li class="nav-li-logo"><a href="/" target="_blank" class="nav-logo-link"><img
+                                src="images/logodws.jpg" class="nav-logo"></a></li>
+                <li><a href="/home">Početna</a></li>
+                <li><a href="/places">Grobna mjesta</a></li>
+                <li><a href="/ostalo">Ostale usluge</a></li>
+                <% if(user && user.role == 'administrator'){ %>
+                    <li><a href="/dashboard">Dashboard</a></li>
+                <% }%>
+                <li style="position: absolute; right: 0;"><a href="/api/v1/logout">Log out</a></li>
+            </ul>
+        </nav>
+        <div class="login-search">
+            <a href="#" class="srch">
+                <input type="text" name="search">
+                <i class="fas fa-search"></i>
+            </a>
+            <a href="login/index.html"><img src="images/batman.png" style="width:30px;"></a>
+        </div>
+
+        <input id="toggle" type="checkbox" />
+        <label class="hamburger" for="toggle">
+            <div class="top"></div>
+            <div class="meat"></div>
+            <div class="bottom"></div>
+        </label>
+
+
+
+        <div class="nav">
+            <div class="nav-wrapper">
+                <nav class="hamb-nav">
+                    <li><a href="/home">Početna</a></li>
+                    <li><a href="/onama">O nama</a></li>
+                    <li><a href="/places">Grobna mjesta</a></li>
+                    <li><a href="/ostalo">Ostale usluge</a></li>
+                    <li><a href="/api/v1/logout">Log out</a></li>
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+        <header>
+            <div id="container">
+
+                <div id="holder">
+
+                    <div id="image">
+                        <div class="img leo"></div>
+                        <div class="img emma"></div>
+                        <div class="img george"></div>
+                    </div>
+
+                    <div id="right"></div>
+
+                    <div id="text">
+                        <div id="centerText">
+                            <p class="p quote">
+                                " Svaki je izlaz ujedno ulaz u nešto drugo. "
+                            </p>
+                            <p class="p quote">
+                                " Važno je koliko dobro živiš, a ne koliko dugo. "
+                            </p>
+                            <p class="p quote">
+                                " Ono što činimo za života odjekuje u vječnosti. "
+                            </p>
+                        </div>
+
+                        <nav class="nav-slider">
+                            <a id="leftBtn" class="nav-slider-a prev"><i class="fa fa-arrow-left"></i></a>
+                            <a id="rightBtn" class="nav-slider-a next"><i class="fa fa-arrow-right"></i></a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div id="bg">
+                    <div class="slide leo-bg"></div>
+                    <div class="slide emma-bg"></div>
+                    <div class="slide george-bg"></div>
+                </div>
+
+                <div id="nav-cirlces">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+
+            </div>
+        </header>
+        <section class="section">
+            <h1>Početna strana</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia dolor condimentum vehicula tincidunt.
+                Nulla vel sem sit amet velit tempus pretium eget et est. Sed maximus vestibulum vulputate. Praesent sed justo ac
+                dui ullamcorper volutpat. Fusce molestie elit eu convallis vulputate. Duis ac congue nunc, id consectetur urna.
+                Phasellus condimentum malesuada tortor eget ultricies. Donec sit amet nisi ut ante consequat semper sed id neque.
+                Donec ipsum felis, commodo ac diam id, aliquam tristique risus. Aenean in tellus sed dui tristique vestibulum. In
+                a maximus nunc. Nulla et dictum orci, vel fringilla tortor. Mauris a dictum velit, nec imperdiet ante.</p>
+            <p>Sed nulla tellus, ultrices non maximus sed, dapibus sit amet dolor. Nullam molestie nibh a varius dictum. Cras
+                sit amet quam euismod, vulputate sem at, sagittis tortor. Phasellus venenatis ac magna quis aliquam. Morbi auctor
+                lectus quis ligula vehicula accumsan. Nunc feugiat neque a leo tristique, quis mollis eros consectetur. Sed semper
+                justo quis felis volutpat venenatis. Aenean in rhoncus leo, eu tempor nunc. Donec cursus orci at tortor lacinia,
+                eget tempor nulla convallis. Sed et fringilla risus, et imperdiet erat.</p>
+            <p>Vivamus quis ornare odio. Vestibulum et lacus vel massa porttitor mattis eget vel dui. Donec iaculis convallis
+                mollis. Etiam malesuada, eros vel congue posuere, velit urna feugiat felis, tempus sodales libero lorem
+                scelerisque nunc. Curabitur ac enim vel libero porttitor fringilla nec et ipsum. Nam eu augue a sapien porttitor
+                tempor vitae aliquet mauris. Curabitur semper, velit in dictum sodales, libero nisl aliquam odio, in elementum
+                nunc leo finibus lectus. Sed vel imperdiet magna, et pharetra mauris. Duis sed pharetra nibh. Phasellus arcu
+                ligula, gravida non rutrum ac, tincidunt sit amet dolor. Integer suscipit porta nibh, at scelerisque leo suscipit
+                eget. Morbi eros magna, ullamcorper in iaculis id, varius non diam. Orci varius natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Sed eu vestibulum nisi, at auctor ante.</p>
+        </section>
+
+</div>
+</main>
+<hr>
+<footer>
+    <p class="tekst-desno">All rights reserved by EmbodimenTeam®
+        <a href="https://www.instagram.com" target="_blank"><img class="drustvene-mreze" src="images/instagram.png"></a>
+        <a href="https://www.facebook.com" target="_blank"><img class="drustvene-mreze" src="images/facebook-logo.png"></a>
+    </p>
+</footer>
+</hr>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/javascripts/slider.js"></script>
+</body>
+
+</html>

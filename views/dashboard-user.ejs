@@ -1,0 +1,43 @@
+<% include ./partials/header %>
+<% include ./partials/sidebar %>
+
+<% if(err) err
+else { %>
+    <div class="sidebar-item sidebar-header flex-nowrap" style="width:60%">
+        <form action="#" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="uname">First name:</label>
+                <input type="text" class="form-control" id="fname" value="<%= user.firstname %>"
+                       placeholder="Enter first name" name="fname" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="uname">Last name:</label>
+                <input type="text" class="form-control" id="lname" value="<%= user.lastname %>"
+                       placeholder="Enter last name" name="lname" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Email:</label>
+                <input type="email" class="form-control" id="email" value="<%= user.email %>"
+                       placeholder="Enter password" name="email" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+            </div>
+            <button type="submit" class="btn btn-outline-dark">Submit</button>
+        </form>
+        <div id="alert-success" class="alert alert-success" style="margin-top: 20px; display: none;">
+            <strong>Success!</strong> Redirecting to users list...
+        </div>
+        <div id="alert-fail" class="alert alert-dark" style="margin-top: 20px; display: none;">
+            <strong>Failed!</strong> please check data provided...
+        </div>
+    </div>
+<% } %>
+<% include ./partials/footer %>

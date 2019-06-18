@@ -1,0 +1,88 @@
+<body>
+    <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">Dashboard</a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="/images/avatar.png" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name"><%= admin.firstname %> <strong><%= admin.lastname%></strong>
+                        </span>
+                        <span class="user-role"><%= admin.role %></span>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <ul>
+                        <li>
+                            <a href="/dashboard/users">
+                                <i class="fa fa-users"></i>
+                                <span class="menu-text">Users</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="menu-text">E-commerce</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Reservations</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="far fa-gem"></i>
+                                <span class="menu-text">Components</span>
+                            </a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li>
+                                        <a href="#">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Cemetery</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Mail</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        <li>
+                            <a href="/home">
+                                <i class="fas fa-arrow-left"></i>
+                                <span class="menu-text">Back to site</span>
+                            </a>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+
+        </nav>
+        <!-- page-content  -->
+        <main class="page-content pt-2">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid p-5">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <a id="toggle-sidebar" class="btn btn-secondary rounded-0" href="#">
+                            <span>Toggle Sidebar</span>
+                        </a>
+                        <a id="pin-sidebar" class="btn btn-outline-secondary rounded-0" href="#">
+                            <span>Pin Sidebar</span>
+                        </a>
+
+                    </div>
+                </div>
+                <hr>

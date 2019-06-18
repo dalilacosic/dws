@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+<% include ./partials/sidebar %>
+
+<% if(err) err
+    else { %>
+<div class="sidebar-item sidebar-header flex-nowrap" style="justify-content: center; width:100%">
+    <table id="table" class="table table-striped table-bordered dt-head-center" style="width:100%"  data-order='[[ 0, "asc" ]]' data-page-length='10'>
+        <thead>
+        <tr>
+            <th >ID</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Created at</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if(users && users.length)
+            users.forEach( (user, index) =>{
+                let createdAt = new Date(user.createdAt)
+        %>
+        <tr>
+            <td><%=index%></td>
+            <td><%= user.firstname %></td>
+            <td><%= user.lastname %></td>
+            <td><%= createdAt.toLocaleDateString() %></td>
+            <td><a href="/dashboard/users/<%= user.id %>"><i class="far fa-edit"></i></a></td>
+            <td><a href="#" class = "delete-user" id="<%= user.id %>"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+        <% }) %>
+        </tbody>
+    </table>
+</div>
+<% } %>
+<% include ./partials/footer %>
